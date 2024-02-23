@@ -1,0 +1,191 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+font-size: 16px;
+color: white;
+}
+
+
+@font-face {
+ font-family: 'abhaya_libreregular';
+ src: url('fonts/abhayalibre-regular-webfont.woff2') format('woff2'),
+    url('fonts/abhayalibre-regular-webfont.woff') format('woff');
+ font-weight: normal;
+ font-style: normal;
+}
+
+
+@font-face {
+   font-family: 'bilboregular';
+   src: url('fonts/bilbo-regular-webfont.woff2') format('woff2'),
+   url('fonts/bilbo-regular-webfont.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+   }
+
+
+
+.content{
+    position: relative;
+    height: 100vh;
+    display: flex;
+}
+
+  .fond{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    }
+
+.left{
+    background-color: #f2f2f2;
+    flex: 1;
+}
+
+.right{
+    background-color: white;
+    flex: 1;
+}
+
+
+.central{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    height: 75%;
+    display: grid;
+    grid-template-areas: "burger pic bande"
+                         "info pic bande";
+    grid-template-columns:7% 1fr 3%;
+    grid-template-rows: 14% 1fr;   
+    box-shadow: 0 15px 46px #ababab;
+    
+  }
+
+  .burger{
+    position: relative;
+    grid-area: burger;
+    background-color:#121213;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+  }
+  .info{
+    grid-area: info;
+    background-color:#121213 ;
+    border-right: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1em;
+    
+  }
+
+  .pic{
+    position: relative;
+    grid-area: pic;
+    background-image: url(assets/parc.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    overflow: hidden;
+    }
+
+    .flou{
+        position: absolute;
+        width: 250px;
+        height: 120%;
+        top: 0;
+        right: 0;
+        background-color: #ababab;
+        --blur-value:15px;
+        top: calc(-2 * var( --blur-value));
+        right:calc(-2 * var( --blur-value)) ;
+        width: calc(200px + (var(--blur-value) * 2));
+        /*opacity: .9;*/
+        filter: blur(var( --blur-value));
+        }
+
+   .title{
+    font-family: verdana;
+    position: relative;
+    }
+   
+   .maj span{
+    font-size: 3.5em;
+    font-weight: 900;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width:1px;
+   }
+
+   .stylee span{
+    font-family: 'bilboregular';
+    font-size: 2.5em;
+    letter-spacing: 5px;
+    position: absolute;
+    top: 60%;
+    left: 50px;
+    transform: translateY(50%);
+    text-shadow: 1px 12px 19px black;
+   }
+
+
+.stylee{
+    text-align: center;
+   }
+
+   .maj:nth-child(2){
+    padding-left:.6em;
+   }
+
+
+  .bande{
+    grid-area: bande;
+    background-color:#121213 ;
+  }
+
+  .info h1{
+    font-family: 'abhaya_libreregular';
+    rotate: 180deg;
+    writing-mode:vertical-rl ;
+    line-height:0;
+  }
+
+  
+  .info p{
+    font-family: 'abhaya_libreregular';
+    rotate: 180deg;
+    writing-mode:vertical-rl ;
+    align-self: flex-end;
+    line-height:0;
+    }
+
+    .menu{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 28px;
+        height: 1px;
+        background-color: white;
+        cursor: pointer;
+       }
+
+
+    .menu::before{
+        content: "";
+        position: absolute;
+        width: 28px;
+        height: 1px;
+        background-color: white;
+        transform: translateY(5px);
+        cursor: pointer;
+    }
